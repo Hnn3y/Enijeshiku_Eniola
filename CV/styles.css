@@ -1,17 +1,27 @@
 /* General Styles */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #FFD700;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --header-background-color: white;
+    --footer-background-color: #4CAF50;
+}
+
 body {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: var(--text-color);
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     line-height: 1.6;
 }
 
 header {
-    color: black;
+    background-color: var(--header-background-color);
     padding: 20px 40px;
     text-align: center;
+    border-bottom: 2px solid var(--primary-color);
 }
 
 header h1 {
@@ -31,12 +41,12 @@ header h2 {
 .contact-info a {
     font-size: 0.9rem;
     margin: 5px 0;
-    color: black;
+    color: var(--text-color);
 }
 
 .contact-info a {
     text-decoration: none;
-    color: #FFD700;
+    color: var(--secondary-color);
 }
 
 .contact-info a:hover {
@@ -45,18 +55,18 @@ header h2 {
 
 /* Main Section */
 main {
-    padding: 40px;
+    padding: 2rem;
     max-width: 800px;
-    margin: auto;
+    margin: 2rem auto;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 h2 {
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 5px;
-    color: #4CAF50;
+    color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -69,7 +79,7 @@ section {
 
 article h3 {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 5px;
 }
 
@@ -91,13 +101,13 @@ ul li {
 }
 
 strong {
-    color: #4CAF50;
+    color: var(--primary-color);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    background-color: #4CAF50;
+    background-color: var(--footer-background-color);
     color: white;
     padding: 10px 0;
     font-size: 0.85rem;
@@ -107,7 +117,7 @@ footer {
 
 /* Link Styles */
 a {
-    color: #4CAF50;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -115,10 +125,16 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Focus Styles */
+a:focus, button:focus, input:focus {
+    outline: 2px dashed var(--primary-color);
+    outline-offset: 2px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     main {
-        padding: 20px;
+        padding: 1.5rem;
     }
 
     header h1 {
@@ -128,4 +144,34 @@ a:hover {
     header h2 {
         font-size: 1.2rem;
     }
+} 
+
+.dark-mode {
+    background-color: #333;
+    color: #f9f9f9;
+} 
+
+#load-more {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#load-more:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#load-more:active {
+    background-color: #3e8e41;
+    transform: scale(1);
 }
